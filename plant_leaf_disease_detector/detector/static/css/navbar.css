@@ -1,0 +1,38 @@
+.navbar{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #224336;
+    color:white;
+}
+
+li{
+    list-style: none;
+    padding-right: 5px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2px;
+}
+
+.nav-title{
+    color: white;
+    padding-left: 3px;
+}
+
+.nav-link{
+    font-size: 1.2rem;
+    /* font-weight: 400; */
+    color: white;
+}
+
+.nav-title:hover{
+    color: white;
+}
+
+.nav-menu{
+    color: white;
+}

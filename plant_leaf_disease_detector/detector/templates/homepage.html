@@ -1,0 +1,103 @@
+{% include 'navbar.html'%}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <style>
+        .bg{
+            background-image: url("{% static 'img/bg.avif' %}");
+            background-size: cover; 
+            height: 550px; 
+            padding-top: 80px; 
+            text-align: center;
+           
+        }
+        .testimonial-text{ 
+            color: rgb(10, 131, 212); 
+            text-align: center; 
+            font:bold; 
+            font-weight: bold; 
+            font-size: 50px; 
+            
+            font-family:'Times New Roman', Times, serif; 
+            /* font-size: 3rem; */ 
+            line-height: 1.5; 
+        } 
+        #testimonials{
+            padding-top:50px;
+            height:80%;
+        }
+        .testimonial-image{ 
+            width: 20%; 
+            border-radius: 50%; 
+            margin: 10px; 
+            text-align: center; 
+        }
+        .carousel-item{ 
+          /* padding: 2px 12px; */ 
+          margin-top: 20px; 
+          padding-left: 60px; 
+          /* margin-right: 100px; */ 
+          text-align: center; 
+        }
+        .ft{
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+
+    </style>
+</head>
+
+<body class="bg" >
+  
+    <div >
+    <h1 class="ft">Upload image</h1>
+    
+   
+    <div class='container mt-5 pt-5'>
+        <div class='row'>
+        <div class='col-12 col-sm-8 col-md-6 m-auto'>
+        <div class='card'>
+        <div class="card-header text-center ft"><h5 class="card-title">Upload Image</h5></div>
+        <div class='card-body'>
+            <form method="post" enctype="multipart/form-data" action="predictImage">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input name="filePath" type="file">
+                    <br><br><br>
+                    <select name="dropdown"> 
+                        <option selected="selected" disabled> Select Crop :</option> 
+                        <option value="Potato">Potato</option> 
+                        <option value="Apple">Apple</option> 
+                        <option value="Strawberry">Strawberry</option> 
+                        <option value="Grapes">Grapes</option> 
+                        <option value="Peach">Peach</option> 
+                        <option value="Cherry">Cherry</option> 
+                        <option value="Bell-Pepper">Bell-Pepper</option>
+                        <option value="Corn">Corn</option>  
+                    </select>
+                    <br><br><br>
+                    
+                    <button type="submit" class="btn btn-lg btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>  
+    <div>
+    
+</body>
+
+
+</html>
+{% endblock  %}

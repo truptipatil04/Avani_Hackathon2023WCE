@@ -1,0 +1,7 @@
+.bg{
+    background-image: url("{% static 'img/bg.avif' %}");
+    background-size: cover; 
+    height: 550px; 
+    padding-top: 80px; 
+    text-align: center
+}

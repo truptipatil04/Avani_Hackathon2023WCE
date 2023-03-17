@@ -1,0 +1,74 @@
+{% include 'navbar.html'%}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Leaf Disease Detector</title>
+    <style>
+        .bg{
+            background-image: url("{% static 'img/bg.avif' %}");
+            background-size: cover; 
+            height: 550px; 
+            padding-top: 80px; 
+            text-align: center
+        }
+        .d{
+            padding-top: 5vh;
+            padding-left: 70vh;
+            padding-right: 10vh;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            
+        }
+        p,ul{
+            text-align: left;
+            
+        }
+       
+        .l{
+            list-style: disc;
+        }
+    </style>
+</head>
+<body class="bg">
+<div class ="d">
+    <h1>Plant Leaf Disease Detector</h1>
+    <p>
+        India is one of the largest producers of crops and grains in the world for
+        that reason it holds its place as the spine of country's economy. Rapid increase
+        in population led to rapid growth in demand for food. Agricultural yield in
+        India is still low in comparison to other countries of the world. This is caused
+        due to several factors. Climate change leads to many unforeseen diseases.
+        Plant diseases are a major threat to food security, but their rapid identification
+        remains difficult in many parts of India due to the lack of the necessary
+        infrastructure. This project aims to detect the plant disease.
+    </p>
+    <p>
+        This system helps to detect the plant disease easily by uploading image of the leaf.
+        <br>
+        To detect the disease you can upload the image of leaf.
+        There are various subcategories of plants available which are as follows:
+        <ul>
+            <li class="l">potato</li>
+            <li class="l">Apple</li>
+            <li class="l">Strawberry</li>
+            <li class="l">Grapes</li>
+            <li class="l">Peach</li>
+            <li class="l">Cherry</li>
+            <li class="l">Bell pepper</li>
+            <li class="l">Corn</li>
+        </ul>
+    </p>
+    <br>
+<br>
+
+</div>
+    
+</body>
+
+</html>
+{%endblock%}

@@ -1,0 +1,46 @@
+{% include "navbar.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, in
+    itial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <title>Register</title>
+</head>
+
+<body >
+        <div class="container row" style="display: flex; align-items: center; justify-content: center;">
+            <h3>Register</h3><br><br>
+            <div class="registerform col-lg-6">
+                <div class = "mb-3">
+                    <form id="registration" action="" method="POST">
+                        {% csrf_token %}
+                        <b>Username &nbsp;: &nbsp; &nbsp; &nbsp; </b><input id="txt" type="text" name="username" placeholder="  User Name"><br><br>
+                        <b>First Name &nbsp;: &nbsp; &nbsp; &nbsp;        </b><input id="txt" type="text" name="firstname" placeholder="  First Name"><br><br>
+                        <b>Last Name &nbsp;: &nbsp; &nbsp; &nbsp;         </b><input id="txt" type="text" name="lastname" placeholder="  Last Name"><br><br>
+                        <b>Email &nbsp;: &nbsp; &nbsp; &nbsp;             </b><input id="txt" type="email" name="email" placeholder="  Email"><br><br>
+                        <b>Password &nbsp;: &nbsp; &nbsp; &nbsp;          </b><input id="txt" type="password" name="password1" placeholder="  Password"><br><br>
+                        <b>Confirm Password &nbsp;: &nbsp; &nbsp; &nbsp;  </b><input id="txt" type="password" name="password2" placeholder="  Confirm Password"><br><br>
+            
+                        <input class="btn btn-primary register-btn" type="submit" value="Register"><br><br>
+                        <a id="accexist" href="login">Already exist an account?</a>
+                    </form>
+                </div>
+                
+                <div class="msgdiv0">
+                    {% for message in messages %}
+                    <h5>{{ message }}</h5>
+                    {% endfor %}
+                </div>
+                    
+            </div>
+        </div>
+
+</body>
+</html>
+{% endblock %}
